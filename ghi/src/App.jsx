@@ -3,6 +3,8 @@ import Application from './components/Application';
 import ViewApplications from './components/ViewApplications';
 import Home from './components/Home';
 import NavBar from "./components/NavBar";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/application" element={<Application />} />
         <Route path="/view-applications" element={<ViewApplications />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
     </BrowserRouter>
