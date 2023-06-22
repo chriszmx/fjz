@@ -43,6 +43,7 @@ const NavBar = () => {
     const links = loggedIn
         ? [
             { to: "/home", text: "Home" },
+            { to: "/admin", text: "admin"},
             { to: "/profile", text: "Profile" },
             { text: "Logout", onClick: handleLogout },
         ]

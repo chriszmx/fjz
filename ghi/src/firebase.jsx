@@ -5,6 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,5 +33,19 @@ console.log(db)
 console.log(app);
 console.log(analytics);
 
+// Function to check if the user is an admin
+const checkAdminRole = async () => {
+    const userId = auth.currentUser.uid;
+    const userRolesDocRef = doc(db, "userRoles", userId);
+    const userRolesDocSnap = await getDoc(userRolesDocRef);
 
-export { app, analytics, db, storage, auth };
+    if (userRolesDocSnap.exists()) {
+        const userRolesData = userRolesDocSnap.data();
+        const isAdmin = userRolesData.admin === 'admin';
+        return isAdmin;
+        }
+
+        return false;
+    }
+
+export { app, analytics, db, storage, auth, checkAdminRole };

@@ -5,6 +5,7 @@ import Home from './components/Home';
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Admin from "./components/admin";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <NavBar />
     <>
       <Routes>
+        <Route path="/admin" element={<Admin />} />
         <Route path="/" element={<Home />} />
         <Route path="/application" element={<Application />} />
         <Route path="/view-applications" element={<ViewApplications />} />
