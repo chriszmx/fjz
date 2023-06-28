@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Admin from "./components/admin";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/admin" element={<Admin />} />
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/application" element={<Application />} />
         <Route path="/view-applications" element={<ViewApplications />} />
         <Route path="/login" element={<Login />} />
